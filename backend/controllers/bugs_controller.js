@@ -32,7 +32,7 @@ router.get("/", async (req, res) => {
   try {
     const Bugs = await Bug.find();
     console.log(Bugs);
-    res.send(Bugs);
+    res.redirect(Bugs);
   } catch (e) {
     console.log(e.message);
     res.send(e);
@@ -41,7 +41,7 @@ router.get("/", async (req, res) => {
 
 router.get("/low", async (req, res) => {
   try {
-    const Bugs = await Bug.find({ priority: "low" });
+    const Bugs = await Bug.find({ priority: "Low" });
     console.log(Bugs);
     res.send(Bugs);
   } catch (e) {
@@ -52,7 +52,7 @@ router.get("/low", async (req, res) => {
 
 router.get("/medium", async (req, res) => {
   try {
-    const Bugs = await Bug.find({priority: "medium"});
+    const Bugs = await Bug.find({priority: "Medium"});
     console.log(Bugs);
     res.send(Bugs);
   } catch (e) {
@@ -63,7 +63,7 @@ router.get("/medium", async (req, res) => {
   // Get all HIGH PRIORITY bugs
   router.get("/high", async (req, res) => {
     try {
-      const Bugs = await Bug.find({ priority: "high"});
+      const Bugs = await Bug.find({ priority: "High"});
       console.log(Bugs);
       res.send(Bugs);
     } catch (e) {
