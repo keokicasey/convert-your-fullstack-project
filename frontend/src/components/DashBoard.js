@@ -74,15 +74,15 @@ export default function Dashboard() {
       totalBugs.forEach(() => {
         total++;
       });
-    } else if (a === "high") {
+    } else if (a === "High") {
       highBugs.forEach(() => {
         total++;
       });
-    } else if (a === "medium") {
+    } else if (a === "Medium") {
       mediumBugs.forEach(() => {
         total++;
       });
-    } else if (a === "low") {
+    } else if (a === "Low") {
       lowBugs.forEach(() => {
         total++;
       });
