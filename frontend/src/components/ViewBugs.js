@@ -31,8 +31,8 @@ export default function ViewBugs() {
   
 
     return (
-        <div><h1>ViewBugs</h1>
-           <Table>
+        <div style={{ display:"flex",justifyContent:"center", flexDirection:"column", alignContent:"center",alignItems:"center"}} ><h1>ViewBugs</h1>
+           <Table striped bordered hover responsive style={{width:"80vw"}}>
             <thead>
                 <tr>
                     <th>Order</th>

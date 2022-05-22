@@ -5,13 +5,13 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const bugSchema = new Schema({
-  name: { type: String, required: true, enum: ["Low", "Medium", "High"] },
-  priority: { type: String, required: true },
+  name: { type: String, required: true, },
+  priority: { type: String, required: true, },
   details: { type: String, required: true },
-  user: {
-    type: Schema.Types.ObjectID,
-    ref: "User",
-  },
+  // user: {
+  //   type: Schema.Types.ObjectID,
+  //   ref: "User",
+  // },
 });
 
 
