@@ -30,11 +30,11 @@ app.use("/bugs",bugsController)
 
 app.use("/users",usersController)
 
-app.get("*", (req, res) => {
+app.get("*", (req:any, res:any) => {
   res.sendFile(path.resolve(__dirname, "../frontend/build", "index.html"));
 });
 
-http: app.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log("Bugtracking at", PORT);
 });
 

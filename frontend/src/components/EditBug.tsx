@@ -11,7 +11,7 @@ export default function EditBug() {
   const [bugName, setbugName] = useState("");
   const [bugPriority, setbugPriority] = useState("");
   const [bugDetails, setbugDetails] = useState("");
-  const [userAssigned, setuserAssigned] = useState("");
+  // const [userAssigned, setuserAssigned] = useState("");
   const [Users, setUsers] = useState("");
 
   // fetch for the bug that was clicked
@@ -25,7 +25,7 @@ export default function EditBug() {
         setbugPriority(data.priority);
         setbugDetails(data.details);
       });
-  }, []);
+  }, [bugId]);
 
   // fetch for users
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function EditBug() {
       });
   }, []);
 
-  let handleSubmit = (e) => {
+  let handleSubmit = (e:any) => {
     e.preventDefault();
     fetch("/bugs/" + bugId, {
       method: "PUT",
@@ -46,7 +46,7 @@ export default function EditBug() {
         name: bugName,
         priority: bugPriority,
         details: bugDetails,
-        user: userAssigned,
+        // user: userAssigned,
       }),
     });
   };
@@ -56,7 +56,7 @@ export default function EditBug() {
     return <p>Loading Stuff!</p>;
   }
 
-  console.log(FoundBug.user)
+  // console.log(FoundBug.user)
 
   return (
     <div id="editbug">
@@ -93,24 +93,7 @@ export default function EditBug() {
             onChange={(e) => setbugDetails(e.target.value)}
           />
         </Form.Group>
-
-
-        {/* causing a bug with loading edit page */}
-        {/* <Form.Group className="mb-3">
-          <Form.Label>User Assigned</Form.Label>
-          <Form.Select
-            aria-label="Default select example"
-            onChange={(e) => setuserAssigned(e.target.value)}
-
-          >
-          {Users.map((user)=>{
-            return (
-              <option value={user._id} key={user._id}>{user.name}</option>
-            )
-          })}
-          </Form.Select>
-        </Form.Group> */}
-
+        
         <Button variant="primary" type="submit">
           Save Changes
         </Button>

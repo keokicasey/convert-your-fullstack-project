@@ -1,22 +1,22 @@
 import React from "react";
-import {} from "../components/AuthBug";
+// import {} from "../components/AuthBug";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/esm/Button";
 
 
 export default function Login() {
-  const dispatch = useDispatch();
+  const dispatch:any = useDispatch();
   const [formInput, setFormInput] = useState({
     name: "",
     password: "",
   });
-  function inputChanged(e) {
+  function inputChanged(e:any) {
     setFormInput({
       ...formInput,
       [e.target.name]: e.target.value,
     });
   }
-  function submit(e) {
+  function submit(e:any) {
     dispatch(sigIn(formInput));
     e.preventDefault();
   }
@@ -42,3 +42,15 @@ export default function Login() {
     </Form>
   );
 }
+function useDispatch() {
+  throw new Error("Function not implemented.");
+}
+
+function useState(arg0: { name: string; password: string; }): [any, any] {
+  throw new Error("Function not implemented.");
+}
+
+function sigIn(formInput: any): any {
+  throw new Error("Function not implemented.");
+}
+

@@ -1,8 +1,7 @@
 // Import Mongoose
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
-// Schema Constructor
-const { Schema } = mongoose;
+// Schema ConstructletSchema } = mongoose;
 
 const bugSchema = new Schema({
   name: { type: String, required: true, },
@@ -17,6 +16,6 @@ const bugSchema = new Schema({
 
 
 // Model
-const Bug = mongoose.model("Bug", bugSchema);
+// Bug = mongoose.model("Bug", bugSchema);
 
 module.exports = Bug;

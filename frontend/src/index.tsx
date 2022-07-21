@@ -24,7 +24,7 @@ import EditBug from './components/EditBug';
 import ErrorPage from './components/ErrorPage';
 import "./App.css"
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root:any = ReactDOM.createRoot(document.getElementById('root')!);
 root.render(
   <Router>  
     <NavBar/>

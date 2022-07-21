@@ -20,7 +20,7 @@ export default function ViewBugs() {
     fetchBugs();
     }, []);
 
-  const deleteBug = async (id) => {
+  const deleteBug = async (id:any) => {
     await fetch(`/bugs/delete/${id}`, {
       method: "DELETE",
     });
@@ -42,7 +42,7 @@ export default function ViewBugs() {
                 </tr>
             </thead>
             <tbody>
-                {bugs.map((bug,index)=>{
+                {bugs.map((bug:any,index)=>{
 
                     return (
                       <tr key={bug._id}>
@@ -57,7 +57,7 @@ export default function ViewBugs() {
                         </td>
                         <td>
                           <button id='delete' onClick={() => {
-                            deleteBug(bug._id); window.location.reaload(true)}} >
+                            deleteBug(bug._id); window.location.reload()}} >
                             Delete
                           </button>
                         </td>
